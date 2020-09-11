@@ -4,16 +4,17 @@ import HelloWorld from '@/components/HelloWorld'
 import First from '@/components/views/First'
 import Second from '@/components/views/Second'
 import HelloVue from '@/components/views/HelloVue'
+import firstSample from '@/components/views/firstSample'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+    // {
+    //   path: '/',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld
+    // },
     {
       path: '/views/first',
       name: 'First',
@@ -28,6 +29,11 @@ export default new Router({
       path: '/views/hellovue',
       name: 'Hello,Vue',
       component: HelloVue
+    },
+    {
+      path: '/views/firstsample',
+      name: 'first sample',
+      component: firstSample
     }
   ]
 })
