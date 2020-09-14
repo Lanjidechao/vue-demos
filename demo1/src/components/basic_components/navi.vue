@@ -2,7 +2,7 @@
   <div id="navibar">
     <p class="title">f.alao.viara</p>
     <div v-for="item in items" :key="item.id">
-      <span @click="navigation">{{item.section}}</span>
+      <router-link :to="item.path">{{item.section}}</router-link>     
     </div>
   </div>
 </template>
@@ -11,16 +11,20 @@ export default {
   data: function () {
     return {
       items: [
-        {id: 1, section: 'blogs'},
-        {id: 2, section: 'articles'},
-        {id: 3, section: 'photos'},
-        {id: 4, section: 'about'}
+        {id: '0', section: 'home', path: '/'},
+        {id: '1', section: 'blogs', path: '/views/posts'},
+        {id: '2', section: 'articles', path: '/views/posts'},
+        {id: '3', section: 'photos', path: '/views/posts'},
+        {id: '4', section: 'about', path: '/views/posts'}
       ]
     }
   },
   methods: {
     navigation: function (event) {
       console.log(event.target.textContent)
+      if (event.target.textContent === 'blogs') {
+
+      }
     }
   }
 }
@@ -43,10 +47,10 @@ export default {
     box-shadow: 0 5px 0px rgba(0,0,0,0.2);
     color:#40a8c4;
   }
-  span {
+  router-link {
     transition: all .2s linear;
   }
-  span:hover {
+  router-link:hover {
     cursor: pointer;
     /* background-color:aquamarine; */
     transition: all .2s ease-in;
@@ -58,5 +62,17 @@ export default {
     font-size: 1.5rem;
     font-weight: bold;
     user-select: none;
+  }
+  .router-link-active {
+    text-decoration: none;
+  }
+  a {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a:hover {
+    color:#40a8c4;
   }
 </style>

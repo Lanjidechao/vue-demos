@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import First from '@/components/views/First'
 import Second from '@/components/views/Second'
 import HelloVue from '@/components/views/HelloVue'
 import firstSample from '@/components/views/firstSample'
-
+import BlogPosts from '@/components/views/BlogPosts'
 Vue.use(Router)
 
 export default new Router({
@@ -15,6 +14,11 @@ export default new Router({
     //   name: 'HelloWorld',
     //   component: HelloWorld
     // },
+    {
+      path: '/views/posts',
+      name: 'Posts',
+      component: BlogPosts
+    },
     {
       path: '/views/first',
       name: 'First',
