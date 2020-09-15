@@ -1,8 +1,8 @@
 <template>
-  <div id="post">
+  <div @mouseover="linkclasschange" @mouseout="linkclassresume" id="post">
     <div id="post_titlle">
       <div class="tag">{{main_tag}}</div>
-      <div id="title" @click="goToPost">
+      <div id="title" :class="linkclassname" @click="goToPost">
       {{post_title}}
       </div>
     </div>
@@ -16,20 +16,38 @@
 </template>
 <script>
 export default {
-  props: ['post_title', 'post_date', 'post_brief', 'main_tag'],
+  props: ['post_id', 'post_title', 'post_date', 'post_brief', 'main_tag'],
   mounted: function () {
-    document.getElementById('post').addEventListener('mouseover', function () {
-      document.getElementById('title').style.color = '#4e89ae'
-    })
-    document.getElementById('post').addEventListener('mouseout', function () {
-      document.getElementById('title').style.color = 'black'
-    })
+    // document.getElementById('post').addEventListener('mouseover', function () {
+    //   document.getElementById('title').style.color = '#4e89ae'
+    // })
+    // document.getElementById('post').addEventListener('mouseout', function () {
+    //   document.getElementById('title').style.color = 'black'
+    // })
   },
   methods: {
     goToPost: function () {
-      alert('going to post')
+      alert('going to post ' + this.post_id + '...')
+    },
+    linkclasschange: function () {
+      this.linkclassname = 'linkactive'
+    },
+    linkclassresume: function () {
+      this.linkclassname = 'link'
+    }
+  },
+  data () {
+    return {
+      linkclassname: 'link',
+      postId: ''
     }
   }
+  // in case of dynamic getting post id
+  // watch: {
+  //   post_id: function (n, o) {
+  //     this.postId = n
+  //   }
+  // }
 }
 </script>
 <style>
@@ -76,5 +94,11 @@ export default {
 }
 #title:hover {
   cursor: pointer;
+}
+.linkactive {
+  color: #4e89ae;
+}
+.link {
+  color:black
 }
 </style>

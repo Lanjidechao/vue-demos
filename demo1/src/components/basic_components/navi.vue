@@ -2,7 +2,7 @@
   <div id="navibar">
     <p class="title">f.alao.viara</p>
     <div v-for="item in items" :key="item.id">
-      <router-link :to="item.path">{{item.section}}</router-link>     
+      <router-link :to="item.path">{{item.section}}</router-link>
     </div>
   </div>
 </template>
