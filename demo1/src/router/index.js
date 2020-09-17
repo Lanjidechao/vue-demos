@@ -5,6 +5,7 @@ import Second from '@/components/views/Second'
 import HelloVue from '@/components/views/HelloVue'
 import firstSample from '@/components/views/firstSample'
 import BlogPosts from '@/components/views/BlogPosts'
+import PostDetailPage from '@/components/sub/PostDetailPage'
 Vue.use(Router)
 
 export default new Router({
@@ -18,6 +19,11 @@ export default new Router({
       path: '/views/posts',
       name: 'Posts',
       component: BlogPosts
+    },
+    {
+      path: '/views/posts/1',
+      name: 'PostDetail',
+      component: PostDetailPage
     },
     {
       path: '/views/first',

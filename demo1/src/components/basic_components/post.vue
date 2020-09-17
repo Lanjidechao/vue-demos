@@ -28,6 +28,7 @@ export default {
   methods: {
     goToPost: function () {
       alert('going to post ' + this.post_id + '...')
+      this.$router.push({path: '/views/posts/' + this.post_id, params: {post_title: '1', post_content: '2', post_footer: '3'}})
     },
     linkclasschange: function () {
       this.linkclassname = 'linkactive'
