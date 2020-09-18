@@ -1,21 +1,25 @@
 <template>
   <div class="post">
     <div class="postTitle">
-      {{post_title}}
+      {{this.$route.params.post_title}}
     </div>
     <div class="postContent">
-      {{post_content}}
+      {{this.$route.params.post_content}}
     </div>
     <div class="postFooter">
-      {{post_footer}}
+      {{this.$route.params.post_footer}}
     </div>
   </div>
 </template>
 <script>
 export default {
+  name: 'postDetailPage',
   props: ['post_title', 'post_content', 'post_footer']
 }
 </script>
 <style>
-
+  .post {
+    width: 100%;
+    padding: 1rem;
+  }
 </style>
